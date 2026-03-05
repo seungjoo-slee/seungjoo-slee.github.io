@@ -486,29 +486,30 @@
       gap: 8px;
     }
 
-    /* Cohesive portfolio refresh */
+    /* Simple portfolio refresh */
     :root {
-      --bg: #f2ede4;
-      --bg-deep: #e8dfcf;
-      --panel: #fffcf5;
+      --bg: #f7f4ee;
+      --bg-deep: #f7f4ee;
+      --panel: #ffffff;
       --text: #1f1913;
-      --muted: #6c6258;
-      --line: #d9ccb9;
-      --accent: #a94a2a;
-      --accent-soft: #f4e3d0;
-      --shadow: 0 18px 42px rgba(47, 28, 8, 0.1);
+      --muted: #6b645a;
+      --line: #e2d8cb;
+      --accent: #8f4a2b;
+      --accent-soft: #f4ede4;
+      --shadow: 0 8px 20px rgba(34, 24, 14, 0.06);
     }
 
     body {
-      background:
-        radial-gradient(circle at 0% 0%, rgba(255, 251, 242, 0.95) 0%, rgba(255, 251, 242, 0) 40%),
-        radial-gradient(circle at 100% 8%, rgba(235, 218, 191, 0.6) 0%, rgba(235, 218, 191, 0) 36%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
+      background: var(--bg);
     }
 
     .topbar {
-      background: rgba(242, 237, 228, 0.82);
-      border-bottom: 1px solid rgba(95, 73, 48, 0.15);
+      background: rgba(247, 244, 238, 0.94);
+      border-bottom: 1px solid rgba(95, 73, 48, 0.1);
+    }
+
+    .heroCard::after {
+      content: none;
     }
 
     .heroCard,
@@ -521,8 +522,7 @@
     }
 
     .heroCard {
-      background:
-        linear-gradient(138deg, rgba(250, 241, 227, 0.95), rgba(255, 252, 246, 0.95));
+      background: var(--panel);
     }
 
     .lead {
@@ -589,8 +589,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background:
-        linear-gradient(140deg, #f0e2cf 0%, #ead8be 45%, #f6ecdf 100%);
+      background: #f1ebe2;
       position: relative;
       overflow: hidden;
     }
@@ -611,14 +610,14 @@
 
     .tileMediaLabel {
       font-weight: 700;
-      color: #4c3421;
+      color: #4d3a2b;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       font-size: 12px;
       padding: 8px 12px;
-      border: 1px solid #b88962;
+      border: 1px solid #c9b39b;
       border-radius: 999px;
-      background: rgba(255, 248, 235, 0.82);
+      background: #fbf8f2;
     }
 
     .tileBody {
@@ -663,7 +662,7 @@
     .sectionCard,
     .contactCard,
     .metaCard {
-      background: linear-gradient(180deg, rgba(255, 253, 246, 0.95), rgba(254, 249, 239, 0.95));
+      background: var(--panel);
     }
 
     @media (max-width: 680px) {
