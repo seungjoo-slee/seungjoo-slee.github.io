@@ -486,6 +486,196 @@
       gap: 8px;
     }
 
+    /* Cohesive portfolio refresh */
+    :root {
+      --bg: #f2ede4;
+      --bg-deep: #e8dfcf;
+      --panel: #fffcf5;
+      --text: #1f1913;
+      --muted: #6c6258;
+      --line: #d9ccb9;
+      --accent: #a94a2a;
+      --accent-soft: #f4e3d0;
+      --shadow: 0 18px 42px rgba(47, 28, 8, 0.1);
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 0% 0%, rgba(255, 251, 242, 0.95) 0%, rgba(255, 251, 242, 0) 40%),
+        radial-gradient(circle at 100% 8%, rgba(235, 218, 191, 0.6) 0%, rgba(235, 218, 191, 0) 36%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
+    }
+
+    .topbar {
+      background: rgba(242, 237, 228, 0.82);
+      border-bottom: 1px solid rgba(95, 73, 48, 0.15);
+    }
+
+    .heroCard,
+    .metaCard,
+    .sectionCard,
+    .contactCard,
+    .tile,
+    .modal {
+      border: 1px solid #d4c5b2;
+    }
+
+    .heroCard {
+      background:
+        linear-gradient(138deg, rgba(250, 241, 227, 0.95), rgba(255, 252, 246, 0.95));
+    }
+
+    .lead {
+      font-size: 18px;
+      max-width: 60ch;
+    }
+
+    .heroStats {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .heroStat {
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid #decfb9;
+      background: rgba(255, 255, 255, 0.74);
+    }
+
+    .heroStatValue {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .heroStatLabel {
+      margin: 2px 0 0;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .sectionHead p {
+      font-size: 15px;
+    }
+
+    .grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 18px;
+    }
+
+    .tile {
+      padding: 0;
+      overflow: hidden;
+      cursor: default;
+      transform: none;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .tile:hover {
+      transform: translateY(-4px);
+      transition: transform .2s ease;
+    }
+
+    .tileMedia {
+      min-height: 170px;
+      border-bottom: 1px solid #e4d7c5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        linear-gradient(140deg, #f0e2cf 0%, #ead8be 45%, #f6ecdf 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tileMedia img,
+    .tileMedia iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      object-fit: cover;
+      display: block;
+    }
+
+    .tileMedia iframe {
+      aspect-ratio: 16 / 9;
+      min-height: 170px;
+    }
+
+    .tileMediaLabel {
+      font-weight: 700;
+      color: #4c3421;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 12px;
+      padding: 8px 12px;
+      border: 1px solid #b88962;
+      border-radius: 999px;
+      background: rgba(255, 248, 235, 0.82);
+    }
+
+    .tileBody {
+      padding: 18px 18px 16px;
+      display: grid;
+      gap: 10px;
+      height: 100%;
+    }
+
+    .tileTitle {
+      font-size: 30px;
+      margin: 0;
+    }
+
+    .tileDesc {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .tileBullets {
+      margin: 2px 0 0;
+      padding-left: 18px;
+      color: #43372c;
+      display: grid;
+      gap: 4px;
+      font-size: 13px;
+    }
+
+    .tileActions {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding-top: 4px;
+    }
+
+    .tileActions .btn {
+      padding: 8px 12px;
+      font-size: 12px;
+    }
+
+    .sectionCard,
+    .contactCard,
+    .metaCard {
+      background: linear-gradient(180deg, rgba(255, 253, 246, 0.95), rgba(254, 249, 239, 0.95));
+    }
+
+    @media (max-width: 680px) {
+      .heroStats {
+        grid-template-columns: 1fr;
+      }
+
+      .tileTitle {
+        font-size: 26px;
+      }
+    }
+
     @keyframes rise {
       from {
         opacity: 0;
@@ -557,6 +747,20 @@
           I build PR, planning, and marketing work that connects cultural relevance with business goals.
           My focus is fashion and cosmetics, where brand voice and execution quality directly shape trust.
         </p>
+        <div class="heroStats" aria-label="Highlights">
+          <article class="heroStat">
+            <p class="heroStatValue">5</p>
+            <p class="heroStatLabel">Selected Projects</p>
+          </article>
+          <article class="heroStat">
+            <p class="heroStatValue">97%</p>
+            <p class="heroStatLabel">Occupancy Result</p>
+          </article>
+          <article class="heroStat">
+            <p class="heroStatValue">32K+</p>
+            <p class="heroStatLabel">Avg. Editorial Views</p>
+          </article>
+        </div>
         <div class="heroActions">
           <a class="btn primary" href="#work">View Projects</a>
           <a class="btn ghost" href="Sarah-Lee-Resume.pdf" target="_blank" rel="noopener noreferrer">Open Resume</a>
@@ -584,7 +788,7 @@
       <div class="sectionHead">
         <div>
           <h2>Selected Work</h2>
-          <p>Projects across product planning, brand positioning, content production, and editorial communication.</p>
+          <p>Projects across product planning, brand positioning, content production, and editorial communication. Most cards open directly to deliverables, with quick details available inline.</p>
         </div>
         <div class="controls" aria-label="Work controls">
           <div class="search">
@@ -822,12 +1026,54 @@
         .filter(matchesSearch);
     }
 
+    function detectLinkType(url) {
+      const clean = (url || "").toLowerCase().split("?")[0];
+      if (!clean) return "other";
+      if (/\.(png|jpe?g|gif|webp|avif|svg)$/.test(clean)) return "image";
+      if (clean.endsWith(".pdf")) return "pdf";
+      return "other";
+    }
+
+    function projectMedia(project) {
+      if (project.embed) return { type: "embed", src: project.embed };
+      const imageLink = (project.links || []).find((link) => detectLinkType(link.url) === "image");
+      if (imageLink) return { type: "image", src: imageLink.url };
+      const pdfLink = (project.links || []).find((link) => detectLinkType(link.url) === "pdf");
+      if (pdfLink) return { type: "pdf", src: pdfLink.url };
+      return { type: "none", src: "" };
+    }
+
     function createTile(project) {
       const el = document.createElement("article");
       el.className = "tile";
-      el.tabIndex = 0;
-      el.setAttribute("role", "button");
-      el.setAttribute("aria-label", `${project.title} open details`);
+
+      const media = document.createElement("div");
+      media.className = "tileMedia";
+      const mediaData = projectMedia(project);
+
+      if (mediaData.type === "image") {
+        const img = document.createElement("img");
+        img.src = mediaData.src;
+        img.alt = `${project.title} preview`;
+        img.loading = "lazy";
+        media.appendChild(img);
+      } else if (mediaData.type === "embed") {
+        const frame = document.createElement("iframe");
+        frame.src = mediaData.src;
+        frame.title = `${project.title} preview video`;
+        frame.loading = "lazy";
+        frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        frame.allowFullscreen = true;
+        media.appendChild(frame);
+      } else {
+        const label = document.createElement("span");
+        label.className = "tileMediaLabel";
+        label.textContent = mediaData.type === "pdf" ? "Portfolio PDF" : project.category;
+        media.appendChild(label);
+      }
+
+      const body = document.createElement("div");
+      body.className = "tileBody";
 
       const title = document.createElement("h3");
       title.className = "tileTitle";
@@ -850,17 +1096,53 @@
         pillRow.appendChild(tagPill);
       });
 
-      el.appendChild(title);
-      el.appendChild(desc);
-      el.appendChild(pillRow);
-
-      el.addEventListener("click", () => openModal(project));
-      el.addEventListener("keydown", (event) => {
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault();
-          openModal(project);
-        }
+      const bullets = document.createElement("ul");
+      bullets.className = "tileBullets";
+      (project.bullets || []).slice(0, 2).forEach((bullet) => {
+        const li = document.createElement("li");
+        li.textContent = bullet;
+        bullets.appendChild(li);
       });
+
+      const actions = document.createElement("div");
+      actions.className = "tileActions";
+
+      if ((project.links || []).length) {
+        const mainLink = project.links[0];
+        const main = document.createElement("a");
+        main.className = "btn primary";
+        main.href = mainLink.url || "#";
+        main.target = "_blank";
+        main.rel = "noopener noreferrer";
+        main.textContent = mainLink.label || "Open Work";
+        actions.appendChild(main);
+      }
+
+      if (project.embed) {
+        const watch = document.createElement("a");
+        watch.className = "btn ghost";
+        watch.href = project.embed;
+        watch.target = "_blank";
+        watch.rel = "noopener noreferrer";
+        watch.textContent = "Open Video";
+        actions.appendChild(watch);
+      }
+
+      const quickView = document.createElement("button");
+      quickView.className = "btn";
+      quickView.type = "button";
+      quickView.textContent = "Quick View";
+      quickView.addEventListener("click", () => openModal(project));
+      actions.appendChild(quickView);
+
+      body.appendChild(title);
+      body.appendChild(desc);
+      body.appendChild(pillRow);
+      if (bullets.childElementCount) body.appendChild(bullets);
+      body.appendChild(actions);
+
+      el.appendChild(media);
+      el.appendChild(body);
 
       return el;
     }
